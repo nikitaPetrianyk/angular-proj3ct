@@ -1,0 +1,33 @@
+<div class="dialogs-inner">
+  <div class="dialogs__search-wrap">
+    <input
+      class="dialogs__search inp"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchingStr"
+      focused-background
+      color="#fff"
+    />
+  </div>
+  <div class="dialogs__container" *ngIf="isDialogsLoaded; else loading">
+    <app-dialog-preview
+      *ngFor="let dialog of dialogsEntity | searchDialogs: searchingStr"
+      [dialog]="dialog"
+    ></app-dialog-preview>
+    <div
+      class="dialogs__alert alert alert-danger"
+      *ngIf="!dialogsEntity.length"
+    >
+      Dialog list is empty:(
+    </div>
+    <div
+      class="dialogs__alert alert-danger alert"
+      *ngIf="searchingProcessAsyncEntity | async as message"
+    >
+      {{ message }}
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p class="dialogs__alert alert alert-process">Dialogs are loading...</p>
+</ng-template>

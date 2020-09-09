@@ -1,0 +1,15 @@
+@import "../../../../vars.scss";
+
+.content-wrap {
+  display: flex;
+  position: relative;
+  border: 1px solid $gray;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.19);
+  max-height: 90vh;
+  min-height: 90vh;
+}
+
+.chat-info-wrap {
+  width: 100%;
+  padding: 7px;
+}

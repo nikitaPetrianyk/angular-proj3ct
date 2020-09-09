@@ -1,0 +1,16 @@
+@import "src/app/vars.scss";
+
+.chat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__title,
+  &__text {
+    font-size: 17px;
+    color: $gray-text;
+    font-weight: 400;
+  }
+}

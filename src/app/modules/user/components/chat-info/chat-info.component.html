@@ -1,0 +1,14 @@
+<div class="chat-info">
+  <h2
+    class="chat-info__title"
+    *ngIf="selectedDialogId$ | async as id; else primaryInfo"
+  >
+    Dialog '{{ id }}' selected
+  </h2>
+</div>
+
+<ng-template #primaryInfo
+  ><p class="chat-info__text">
+    Please select a chat to start messaging
+  </p></ng-template
+>

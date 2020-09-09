@@ -1,0 +1,16 @@
+@import "../../../../vars.scss";
+
+:host {
+  max-width: 35%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.sidebar {
+  display: flex;
+  border-right: 2px solid $gray;
+
+  &-inner {
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+.dialogs-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dialogs__search-wrap {
+  padding: 15px;
+  min-height: 35px;
+  position: sticky;
+  left: 0;
+  top: 0px;
+  z-index: 1;
+  width: calc(100% - 31px);
+  background-color: #fff;
+}
+
+.dialogs__search {
+  display: block;
+  width: 100%;
+  min-height: 35px;
+  padding: 0px 10px;
+  background-color: #ededed;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.dialogs__alert {
+  width: 80%;
+}

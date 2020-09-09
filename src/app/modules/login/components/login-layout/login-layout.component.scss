@@ -1,0 +1,26 @@
+@import "../../../../vars.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-theme;
+  min-height: 100vh;
+}
+
+.login-layout__header {
+  background-color: $blue-theme;
+  height: 35vh;
+}
+
+.login-layout__body {
+  background-color: $gray-theme;
+  height: 65vh;
+}
+
+.login-layout__form-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-60%, -50%);
+}

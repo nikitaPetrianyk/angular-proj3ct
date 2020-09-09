@@ -1,0 +1,67 @@
+<form class="form auth-form" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="auth-form__header">
+    <h2 class="auth-form__title">Sign in</h2>
+    <p class="auth-form__info">
+      Please enter your email and password.
+    </p>
+  </div>
+  <div class="auth-form__body">
+    <div class="auth-form__body-item">
+      <label for="email" class="auth-form__label">Email</label>
+      <input
+        id="email"
+        type="email"
+        class="auth-form__input"
+        [ngClass]="{
+          invalid: form.get('email').touched && form.get('email').invalid
+        }"
+        placeholder="Email..."
+        formControlName="email"
+      />
+      <div
+        class="validation-alert"
+        *ngIf="form.get('email').touched && form.get('email').invalid"
+      >
+        <small *ngIf="form.get('email').errors.required"
+          >Please, input your email</small
+        >
+        <small *ngIf="form.get('email').errors.invalid"
+          >Please, input correct value</small
+        >
+      </div>
+    </div>
+    <div class="auth-form__body-item">
+      <label for="password" class="auth-form__label">Password</label>
+      <input
+        id="password"
+        type="password"
+        class="auth-form__input inp"
+        placeholder="Password..."
+        formControlName="password"
+      />
+      <div
+        class="validation-alert"
+        *ngIf="form.get('password').touched && form.get('password').invalid"
+      >
+        <small *ngIf="form.get('password').errors.required"
+          >Please, input your password</small
+        >
+        <small *ngIf="form.get('password').errors.minlength"
+          >It should be at least 6 symbols</small
+        >
+      </div>
+    </div>
+  </div>
+  <button
+    class="auth-form__submit-wrap btn"
+    [disabled]="form.invalid || isSubmitted"
+  >
+    <a class="auth-form__submit-btn" type="submit">Next ></a>
+  </button>
+  <div
+    class="auth-form__alert-wrap"
+    *ngIf="errorMessage$ | async as errorMessage"
+  >
+    <p class="auth-form__alert alert-danger alert">{{ errorMessage }}</p>
+  </div>
+</form>

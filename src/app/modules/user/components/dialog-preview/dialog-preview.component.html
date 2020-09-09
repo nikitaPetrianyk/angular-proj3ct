@@ -1,0 +1,19 @@
+<div
+  class="preview-wrap"
+  hovered-background
+  color="#ededed"
+  (click)="emitSelectedDialogId()"
+>
+  <div class="preview__img-wrap">
+    <img
+      src="../../../../../assets/images/user.png"
+      alt="user"
+      class="preview__img"
+    />
+  </div>
+  <div class="preview__content">
+    <h2 class="preview__sender">{{ sender }}</h2>
+    <p class="preview__last-message">{{ lastMessage }}</p>
+    <span class="preview__date">{{ date }}</span>
+  </div>
+</div>
